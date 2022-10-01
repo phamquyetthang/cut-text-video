@@ -98,10 +98,11 @@
   </v-dialog>
 </template>
 <script>
-import Utils from "@/utils";
-import ServiceApi from "@/services/ServiceApi";
+import Utils from "../utils";
+import ServiceApi from "../ServiceApi";
 
 export default {
+  
   data() {
     return {
       showModal: false,
@@ -273,7 +274,10 @@ export default {
           let file = listFiles[index];
           let newId = Utils.generateKey();
           await this.loadInfoFileAsync(file, this, newId);
-        } catch (error) {}
+        } catch (error) {
+          console.error("🚀 ~ file: ModalUploadFile.vue ~ line 277 ~ onSelectFile ~ error", error)
+          
+        }
       }
       this.isLoading = false;
       event.target.value = "";
@@ -289,7 +293,7 @@ export default {
             id: idItem,
             file: file,
             name: file.name,
-            date: this.$moment(file.lastModifiedDate).format("DD/MM/YYYY"),
+            date: '01/10/2022', //'this.$moment(file.lastModifiedDate).format("DD/MM/YYYY")'
             size: Utils.bytesToSize(file.size),
             typeFile: this.typeInput,
             url: url,

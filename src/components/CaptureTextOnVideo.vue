@@ -212,10 +212,11 @@
 </template>
 
 <script>
-import ModalUploadFile from "../../components/ModalUploadFile.vue";
+import $ from 'jquery'
+import ModalUploadFile from "./ModalUploadFile.vue";
 import Loading from "vue-loading-overlay";
-import Utils from "../../utils";
-import ServiceApi from "../../services/ServiceApi";
+import Utils from "../utils";
+import ServiceApi from "../ServiceApi";
 
 export default {
   components: {
@@ -391,7 +392,7 @@ export default {
         this.imageCrop.height
       );
 
-      try {
+   
         let image = canvas.toDataURL();
         let result = await this.imageToText(image);
         if (result != null) {
@@ -401,9 +402,7 @@ export default {
           });
           return result.trim();
         }
-      } catch (error) {
-        throw error;
-      }
+   
     },
     async onGetText() {
       this.isLoading = true;
@@ -623,8 +622,3 @@ export default {
   object-fit: contain;
 }
 </style>
-
-
-
-// WEBPACK FOOTER //
-// src/screens/CaptureTextOnVideo/index.vue
