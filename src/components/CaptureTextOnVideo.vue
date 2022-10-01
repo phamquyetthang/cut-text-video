@@ -1,3 +1,18 @@
+<style scoped>
+  .video-content {
+    background-color: red;
+    position: relative;
+  }
+
+  .drag-resize-item-active{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  </style>
+  
 <template>
   <div style="max-width: 1400px; margin: auto">
     <div class="d-flex justify-center align-center">
@@ -36,7 +51,7 @@
         <div
           ref="containerVideo"
           id="container-video"
-          class="border reset"
+          class="border reset video-content"
           :style="getStyleParent"
         >
           <canvas id="canvas"></canvas>
