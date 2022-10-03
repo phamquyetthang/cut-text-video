@@ -56,7 +56,7 @@ var showError = res => {
 export default class Api {
   static post = async (url, data, exConfig) => {
     let config = {
-      baseURL: process.env.SERVER_API,
+      baseURL: process.env.SERVER_API || 'https://ocr.tedu.com.vn',
       headers: {
         Authorization: "Bearer " +' store.state.token'
       },
@@ -65,9 +65,9 @@ export default class Api {
     var newConfig = { ...config, ...exConfig };
     newConfig.headers = {
       ...newConfig.headers,
-      ...{
-        Authorization: "Bearer " +' store.state.token'
-      }
+      // ...{
+      //   Authorization: "Bearer " +' store.state.token'
+      // }
     };
     var res = {};
     try {
