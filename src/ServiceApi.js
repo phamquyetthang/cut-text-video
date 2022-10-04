@@ -20,7 +20,7 @@ export default class ServiceApi {
   }
 
   static imageToText(payload) {
-    return Api.post("/Images/image-to-text", payload, {
+    return Api.post("/images/image-to-text", payload, {
       timeout:5 * 60 * 1000
     });
   }

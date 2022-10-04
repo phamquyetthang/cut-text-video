@@ -56,7 +56,7 @@ var showError = res => {
 export default class Api {
   static post = async (url, data, exConfig) => {
     let config = {
-      baseURL: process.env.SERVER_API || 'https://ocr.tedu.com.vn',
+      baseURL: process.env.SERVER_API || 'https://tesseract-ocr2.herokuapp.com',
       headers: {
         Authorization: "Bearer " +' store.state.token'
       },
