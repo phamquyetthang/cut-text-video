@@ -3,5 +3,5 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify'
   ],
-  publicPath: process.env.NODE_ENV === 'production' ? "/REPO_NAME/" : "/"
+  publicPath: process.env.NODE_ENV === 'production' ? "/cut-text-video/" : "/"
 })
